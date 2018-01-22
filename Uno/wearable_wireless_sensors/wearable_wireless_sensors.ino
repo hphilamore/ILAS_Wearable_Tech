@@ -41,13 +41,18 @@ float M = magnitude_3D(acceleration[x],
                        acceleration[y], 
                        acceleration[z]);
 
-Serial.print(acceleration[x]);       //Serial.print(x, 4); 
+step_counter(M);
+
+
+Serial.print(acceleration[x]);       
 Serial.print("\t");
-Serial.print(acceleration[y]);       //Serial.print(y, 4); 
+Serial.print(acceleration[y]);        
 Serial.print("\t");
-Serial.print(acceleration[z]);       //Serial.print(z, 4); 
+Serial.print(acceleration[z]);        
 Serial.print("\t");
-Serial.println(M);     //Serial.println(M, 4); 
+Serial.print(M);  
+Serial.print("\t");
+Serial.println(steps * 100);    
 delay(200);
 }
 
