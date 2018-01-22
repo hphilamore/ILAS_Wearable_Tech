@@ -1,3 +1,15 @@
 [submodule "Flora/singleNeoPixelExamples"]
 	path = Flora/singleNeoPixelExamples
 	url = https://github.com/hphilamore/singleNeoPixelExamples.git
+[submodule "Flora/accelerometer_bluetooth_flora"]
+	path = Flora/accelerometer_bluetooth_flora
+	url = https://github.com/hphilamore/accelerometer_bluetooth_flora.git
+[submodule "Flora/bluetooth_basic_flora"]
+	path = Flora/bluetooth_basic_flora
+	url = https://github.com/hphilamore/bluetooth_basic_flora.git
+[submodule "Flora/pedometer"]
+	path = Flora/pedometer
+	url = https://github.com/hphilamore/pedometer.git
+[submodule "Flora/flora_test"]
+	path = Flora/flora_test
+	url = https://github.com/hphilamore/flora_test.git
