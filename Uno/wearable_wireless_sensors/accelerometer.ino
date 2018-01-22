@@ -1,13 +1,15 @@
 
-float acceleration_3D(){
+void acceleration_3D(){
   /*
   Returns the acceleration in x, y, and x directions in units milli-G 
   */
-  float x = float((myIMU.readAccelX()));
-  float y = float((myIMU.readAccelY()));
-  float z = float((myIMU.readAccelZ()));
+  float X = float((myIMU.readAccelX()));
+  float Y = float((myIMU.readAccelY()));
+  float Z = float((myIMU.readAccelZ()));
 
-  return x, y, z;
+  acceleration[x] = X;
+  acceleration[y] = Y;
+  acceleration[z] = Z;
 }
 
 

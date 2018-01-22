@@ -2,7 +2,9 @@
 
 #include "Wire.h"
 #include "accelerometer_setup.h"
-#include "neopixel_setup.h"
+
+// cmment out if not using neopixel
+//#include "neopixel_setup.h"
 
 
 //int steps, flag;// , flag_movement;
@@ -20,29 +22,32 @@ void setup()
   // comment out if not using accelerometer
   if (myIMU.begin() != IMU_SUCCESS)
   {
-    Serial.println("Failed acceerometer setup.");
+    Serial.println("Failed accelerometer setup.");
     while(1);
   }
 
   // comment out if not using neopixel
-  strip.begin();
-  strip.show();
-  
-  
+  //  strip.begin();
+  //  strip.show();  
 }
+
 
 void loop()
 {
   
-float x, y, z = acceleration_3D();
-float M = magnitude_3D(x, y, z);
+acceleration_3D();
 
-Serial.print(x);       //Serial.print(x, 4); 
+float M = magnitude_3D(acceleration[x], 
+                       acceleration[y], 
+                       acceleration[z]);
+
+Serial.print(acceleration[x]);       //Serial.print(x, 4); 
 Serial.print("\t");
-Serial.print(y);       //Serial.print(y, 4); 
+Serial.print(acceleration[y]);       //Serial.print(y, 4); 
 Serial.print("\t");
-Serial.print(z);       //Serial.print(z, 4); 
+Serial.print(acceleration[z]);       //Serial.print(z, 4); 
 Serial.print("\t");
 Serial.println(M);     //Serial.println(M, 4); 
+delay(200);
 }
 
