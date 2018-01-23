@@ -1,0 +1,32 @@
+/*
+ * Voltage divider circuit. 
+ * Calculates value of R1 (ohms); R1 is the a variable resitance material placed beteen the two probe ends.
+ * Calculates resistivity of the material (ohms/cm) using the measured distance between the "probes" 
+ * R2 is a fixed resister
+ * 
+ * Voltage divider connections:
+ * |----Vs (e.g. 3.3V)
+ * |
+ * | R1 (probe)
+ * |
+ * |----Pin 10
+ * |
+ * | R2
+ * |
+ * |---- GND
+ */
+
+#define probe 10     // the voltage divider pin (connected to Vs by probe)  
+#define Vs 3.3       // nominal supply voltage (check using multimeter)
+#define R2 330       // fixed resister (check using multimeter)
+#define dist 1       // the distance between the probes in cm (measure e.g. using calipers)
+
+int reading;          // voltage on voltage divider pin read as binary value (range 0 to 1023)  
+float voltage;        // binary value converted to voltage
+float R1;             // resistance R1 (Ohms)
+float resistivity_1;  // resistivity of material that forms R1 (Ohms/cm)
+
+int maxSenseA = 1000;    // the maximum value 
+int minSenseA = 23;      // the minimum value 
+
+

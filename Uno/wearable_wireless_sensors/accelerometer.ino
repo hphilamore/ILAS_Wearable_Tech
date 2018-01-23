@@ -19,7 +19,7 @@ float magnitude_3D(float X, float Y, float Z){
   Returns the magnitude of the 3D acceleration vector 
   */
  
-  float M = sqrt(sq(X)+sq(Y)+sq(Z));
+  M = sqrt(sq(X)+sq(Y)+sq(Z));
 
   return M;
 }

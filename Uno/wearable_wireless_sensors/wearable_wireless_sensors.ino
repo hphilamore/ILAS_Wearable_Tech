@@ -1,10 +1,9 @@
 // I2C interface by default
 
 #include "Wire.h"
-#include "accelerometer_setup.h"
-
-// cmment out if not using neopixel
-//#include "neopixel_setup.h"
+#include "accelerometer_setup.h"           // comment out if not using accelerometer
+//#include "neopixel_setup.h"              // comment out if not using neopixel
+#include "resistance_meter_setup.h"        // comment out if not measuring resistance
 
 
 //int steps, flag;// , flag_movement;
@@ -43,16 +42,8 @@ float M = magnitude_3D(acceleration[x],
 
 step_counter(M);
 
-
-Serial.print(acceleration[x]);       
-Serial.print("\t");
-Serial.print(acceleration[y]);        
-Serial.print("\t");
-Serial.print(acceleration[z]);        
-Serial.print("\t");
-Serial.print(M);  
-Serial.print("\t");
-Serial.println(steps * 100);    
-delay(200);
+print_variables();
+   
+delay(20);
 }
 
