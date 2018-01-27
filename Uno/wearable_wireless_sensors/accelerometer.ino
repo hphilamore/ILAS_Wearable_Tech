@@ -26,7 +26,7 @@ float magnitude_3D(float X, float Y, float Z){
 
 
 
-void step_counter(float mag){
+void step_counter(){
   /*
   Cumulatively sums the number of steps taken. 
   Flashes an LED when a step is logged.
@@ -35,7 +35,7 @@ void step_counter(float mag){
   int th = step_threshold;
 
   // if the magnitude is greater than the threshold and the flag is down...
-  if (mag>th && flag==0){
+  if (M>th && flag==0){
       
       steps=steps+1;      // ...count a setp
  
@@ -51,14 +51,14 @@ void step_counter(float mag){
 
   // if the magnitude is greater than the threshold and the flag is up,
   // the step has already been counted 
-  else if (mag>th && flag==1)
+  else if (M>th && flag==1)
     {
       // do nothing
     }
 
 
   // if the magnitude is less than the threshold and the flag is up,
-  if (mag<th  && flag==1)
+  if (M<th  && flag==1)
   {   
     flag=0;         // put the flag down
   }

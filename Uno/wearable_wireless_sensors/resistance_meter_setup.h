@@ -9,14 +9,14 @@
  * |
  * | R1 (probe)
  * |
- * |----Pin 10
+ * |----Pin A0
  * |
  * | R2
  * |
  * |---- GND
  */
 
-#define probe 10     // the voltage divider pin (connected to Vs by probe)  
+#define probe A0     // the voltage divider pin (connected to Vs by probe)  
 #define Vs 3.3       // nominal supply voltage (check using multimeter)
 #define R2 330       // fixed resister (check using multimeter)
 #define dist 1       // the distance between the probes in cm (measure e.g. using calipers)
@@ -26,7 +26,8 @@ float voltage;        // binary value converted to voltage
 float R1;             // resistance R1 (Ohms)
 float resistivity_1;  // resistivity of material that forms R1 (Ohms/cm)
 
-int maxSenseA = 1000;    // the maximum value 
-int minSenseA = 23;      // the minimum value 
+// Variables used to map the binary input reading to a different scale (e.g. for output)
+int max_reading = 1000;    // the maximum value 
+int min_reading = 23;      // the minimum value 
 
 

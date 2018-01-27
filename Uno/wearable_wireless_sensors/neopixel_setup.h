@@ -23,3 +23,8 @@ void neopixelOFF(){
    strip.show();
 }
 
+void neopixel_scaleToInput(j){
+  strip.setPixelColor(0, j , j , j);
+  strip.show
+}
+
